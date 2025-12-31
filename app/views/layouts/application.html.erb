@@ -26,8 +26,8 @@
     <nav class="nav">
     <div id="logo-img"><a href="/pages/index"><%= image_tag("uniqlo.png", height: 50, width: 50) %></a></div>
         <ul class="list">
-            <li><a href="#">Pria</a></li>
-            <li><a href="#">Wanita</a></li>
+            <li><a href="/products?category=Pria">Pria</a></li>
+            <li><a href="/products?category=Wanita">Wanita</a></li>
             <li><% if user_signed_in? %>
       <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete } %>
       <%else%>
