@@ -1,0 +1,21 @@
+<h1>Detail Product</h1>
+
+<div class="detail-container">
+      <div class="detail">
+      <% cache @product do %>
+        <p><%= @product.category %></p>
+        <p><%= @product.name %></p> 
+        <p><%= @product.size_start %>-<%= @product.size_end %></p>
+        <p><%= @product.price %></p> 
+        <p><%= @product.discount %></p>
+        <p><%= @product.rating %></p>
+      <%end%>
+        <br>
+        <a href="/products">Back</a>
+     </div>    
+     <% if user_signed_in?%>
+      <div class="action"><p><%= link_to "Edit", edit_product_path%></p>
+        <%= button_to "Delete", @product, method: :delete, data: {turbo_confirm: "Are you sure!"}%>
+      </div>
+      <%end%>
+</div>

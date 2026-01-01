@@ -1,0 +1,30 @@
+<%= form_with model: @product do |form|%>
+      <% if form.object.errors.any? %>
+       <p class="error"><%= form.object.errors.full_messages.first %></p>
+      <%end%>
+
+      <div>
+    <p><%= form.label :name %></p>
+    <%= form.text_field :name %>
+     <p><%= form.label :size_start %></p>
+     <%= form.text_field :size_start %>
+         <%= form.label :size_end %>
+    <%= form.text_field :size_end %>
+     <p><%= form.label :category %></p>
+    <%= form.text_field :category %>
+    <p> <%= form.label :price %></p>
+    <%= form.text_field :price %>
+     <%= form.label :discount %>
+    <%= form.text_field :discount %>
+    <p> <%= form.label :rating %></p>
+    <%= form.text_field :rating %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+
+<%= link_to "Cancel", products_path %>
+
+  <%end%>
